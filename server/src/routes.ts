@@ -1,9 +1,16 @@
 import express from 'express';
 import UserController from '@controllers/UserController'
+import PostController from '@controllers/PostController';
 
-const routes = express.Router();
+const routesUser = express.Router();
 const userController = new UserController();
 
-routes.post('/user', userController.create);
+routesUser.post('/user', userController.create);
 
-export default routes;
+
+const routesPost = express.Router();
+const postController = new PostController();
+
+routesPost.post('/post', postController.create);
+
+export default routesPost; 
